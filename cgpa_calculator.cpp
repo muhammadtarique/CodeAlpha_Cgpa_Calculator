@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
 
-    // ===== Step 1: Declare Variables =====
     int totalCourses;
 
     string courseName[20];
@@ -18,7 +17,6 @@ int main() {
     cout << "Enter total number of courses: ";
     cin >> totalCourses;
 
-     // ===== Step 2: Take Input for Each Course =====
     for (int i = 0; i < totalCourses; i++) {
 
         cout << "\nCourse " << i + 1 << endl;
@@ -32,7 +30,6 @@ int main() {
         cout << "Enter credit hours: ";
         cin >> credit[i];
 
-        // ===== Step 3: Convert Grade to Points =====
         double gradePoint = 0;
 
         if (grade[i] == "A")
@@ -54,15 +51,13 @@ int main() {
         else
             cout << "Invalid grade! 0 points counted.\n";
 
-        // ===== Step 4: Calculate Points =====
+  
         totalPoints += gradePoint * credit[i];
         totalCredits += credit[i];
     }
 
-    // ===== Step 5: Calculate Semester GPA =====
     double semesterGPA = totalPoints / totalCredits;
 
-    // ===== Step 6: Previous CGPA (Optional) =====
     char choice;
     double finalCGPA = semesterGPA;
 
@@ -82,7 +77,6 @@ int main() {
         finalCGPA = (oldPoints + totalPoints) / (oldCredits + totalCredits);
     }
 
-    // ===== Step 7: Display Result =====
     cout << "\n====== RESULT ======" << endl;
 
     for (int i = 0; i < totalCourses; i++) {
